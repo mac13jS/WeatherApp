@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.weatherapp.view.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_mainFragmentEasy"
+            app:destination="@id/mainFragmentEasy" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.example.weatherapp.view.WeatherFragment"
+        android:label="fragment_weather"
+        tools:layout="@layout/weather_fragment" />
+    <fragment
+        android:id="@+id/mainFragmentEasy"
+        android:name="com.example.weatherapp.view.MainFragmentEasy"
+        android:label="MainFragmentEasy" >
+        <action
+            android:id="@+id/action_mainFragmentEasy_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_mainFragmentEasy_to_weatherFragmentEasy"
+            app:destination="@id/weatherFragmentEasy" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherFragmentEasy"
+        android:name="com.example.weatherapp.view.WeatherFragmentEasy"
+        android:label="WeatherFragmentEasy" />
+</navigation>
